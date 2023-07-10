@@ -1,0 +1,10 @@
+.new{
+    font-size: 20px;
+}
+
+.comment{
+    border: 2px solid black;
+    border-radius: 7px;
+    background-color: #CDCFC7;
+    height: 50px;
+}

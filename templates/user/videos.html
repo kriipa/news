@@ -1,0 +1,202 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+	integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/css/root.css">
+
+</head>
+
+<body> -->
+
+{% extends './root.html' %} {% load static %} {% block content %}
+
+<section>
+<div class="container">
+    <h3 class="mb-3">Trending videos</h3>
+
+    <!-- card -->
+
+    <!-- first row -->
+    <div class="card-group">
+        <div class="row row-cols-1 row-cols-md-4 card-group">
+            {% for vid in vids %}
+            {% if vid.rank == 1 %}
+            <div class="card me-1 ">
+                <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <p class="card-text">{{vid.desc}}
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+            {% for vid in vids %}
+            {% if vid.rank == 2 %}
+            <div class="card me-1 ">
+                <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <p class="card-text">{{vid.desc}}
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            
+            {% for vid in vids %}
+            {% if vid.rank == 3 %}
+            <div class="card me-1 ">
+                <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <p class="card-text">{{vid.desc}}
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+            {% for vid in vids %}
+            {% if vid.rank == 4 %}
+            <div class="card ">
+                <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <p class="card-text">{{vid.desc}}
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="card-group">
+        <div class="row row-cols-1 row-cols-md-4 card-group">
+            {% for vid in vids %}
+            {% if vid.rank == 5 %}
+            <div class="card me-1 ">
+                <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <p class="card-text">{{vid.desc}}
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+            {% for vid in vids %}
+            {% if vid.rank == 6 %}
+            <div class="card me-1 ">
+                <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <p class="card-text">{{vid.desc}}
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+            {% for vid in vids %}
+            {% if vid.rank == 7 %}
+            <div class="card me-1 ">
+                <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <p class="card-text">{{vid.desc}}
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+            <!-- <div class="card me-1">
+                <img src="..." class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This card has even longer content
+                    than the first to show that equal height action.
+                    </p>
+                </div>
+                
+            </div> -->
+
+            {% for vid in vids %}
+            {% if vid.rank == 8 %}
+            <div class="card">
+                <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <p class="card-text">{{vid.desc}}
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- <div class="pagination">
+                {% if vid_page.has_previous %}
+                    <a href="?page={{ vid_page.previous_page_number }}">Previous</a>
+                {% endif %}
+                
+                <span class="current-page">{{ vid_page.number }}</span>
+                
+                {% if vid_page.has_next %}
+                    <a href="?page={{ vid_page.next_page_number }}">Next</a>
+                {% endif %}
+            </div> -->
+
+    <!-- first row end-->
+
+    <!-- second row -->
+    <!-- <div class="card-group mt-5">
+                <div class="card me-2 col-sm-6 vid">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Video : Western culture ad minim veniam, quis nosx ercitation ullamco laboris nisi..
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="card me-2 vid">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Video : Locked ut aliquip ex ea commodo consequat...</p>
+                    </div>
+                    
+                </div>
+                <div class="card me-2 vid">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Video : Covid ad minim veniam, quis nosx ercitation ullamco laboris nisi..</p>
+                    </div>
+                    
+                </div>
+                <div class="card me-2 vid">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Video : Nepali culture ad minim veniam, quis nosx ercitation ullamco laboris nisi..</p>
+                    </div>
+                    
+                </div>
+            </div> -->
+    <!-- second row end-->
+
+</div>
+</section>
+{% endblock %}
+<!-- </body>
+
+</html> -->

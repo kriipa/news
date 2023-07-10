@@ -1,0 +1,19 @@
+.navUL{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    }
+
+.container{
+    font-family: 'Noto Serif Georgian', serif;
+}
+
+/* .css1{
+    background-color:yellow;
+    font-size:50px;
+    font-family: georgia;
+    font-style:italic;
+    font-weight:bold;
+    color:purple;
+    text-shadow: 2px 2px 8px #FF0000;
+} */

@@ -1,0 +1,7 @@
+.helpcol{
+    border: 2px rgb(113, 159, 181) solid;
+    border-radius: 10px;
+    width: 600px;
+    margin: 4px;
+    box-shadow: 7px 7px 5px rgb(202, 195, 177);
+}

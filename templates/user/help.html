@@ -1,0 +1,63 @@
+{% extends './root.html' %}
+{% load static %}
+{% block content %}
+
+<section>
+    <div class="container">
+        <h3 class="text-center mb-3">Help</h3>
+
+        <div style="margin-left: 60px;">
+            <div class="row row-cols-1 row-cols-md-2 ">
+                <div class="col helpcol ">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Searching for News</h5>
+                            <p class="card-text">
+                                To search for news, use the search bar located at the top-right corner of the website. Type your query and press enter or click the magnifying glass icon. You can search by keywords, titles, or authors.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col helpcol">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Navigating Categories</h5>
+                            <p class="card-text">
+                                You can find different news categories in the navigation bar at the top of the page. Click on any category to view the news related to that category. Examples of categories include Politics, Sports, Entertainment, and Technology.                        
+                            </p>                    
+                        </div>
+                    </div>
+                </div>
+                <div class="col helpcol mt-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Troubleshooting</h5>
+                            <p class="card-text">
+                                If you encounter any issues while using the website, such as pages not loading or links not working, first try refreshing the page or clearing your browser’s cache. If the issue persists, please contact our support team by visiting the <a href="/contact">Contact Us</a> page.                        
+                            </p>                    
+                        </div>
+                    </div>
+                </div>
+                <div class="col helpcol mt-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Creating an Account</h5>
+                            <p class="card-text">
+                                To get a more personalized experience, you can create an account on NewsPortal. By creating an account, you can save articles to read later, comment on articles, and receive customized news recommendations.
+                            </p>
+                                <ol>
+                                    <li>Click on 'Login' or 'Sign Up' usually located at the top right of the page.</li>
+                                    <li>Fill in the registration form with your email address, a password, and any other required information.</li>
+                                    <li>Login with your new credentials and start exploring!</li>
+                                </ol>                                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+        
+</section>
+
+{% endblock %}
