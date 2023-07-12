@@ -1,0 +1,69 @@
+{% extends './root.html' %}
+{% load static %}
+{% block content %}
+
+    <style>
+        .log-box{
+            box-shadow: 4px 5px 5px 0px rgba(63,79,176,0.75);
+            -webkit-box-shadow: 4px 5px 5px 0px rgba(156, 163, 199, 0.75);
+            -moz-box-shadow: 4px 5px 5px 0px rgba(63,79,176,0.75);
+        }
+        
+        .log{
+            box-shadow: 4px 5px 5px 0px rgba(63,154,176,0.75);
+            -webkit-box-shadow: 4px 5px 5px 0px rgba(95, 100, 101, 0.75);
+            -moz-box-shadow: 4px 5px 5px 0px rgba(63,154,176,0.75);
+        }
+        
+    </style>
+    <section>
+        <div class="container"  >
+            <div class="row  log sm-border-none" style="border: 2px solid black; border-radius: 10px;">
+                <div class="col-md-6 p-0 d-none d-md-block">
+                    <img class="d-none d-md-block " src="/static/images/fig_news3.png" alt="">
+                </div>
+                <!-- <div class="col-md-6">
+                    <div class="" style="border: 3px solid black; background-color: rgb(155, 151, 151); width: 450px; height: 350px; border-radius: 10px;">
+                        <div style="justify-content: center;"> <p>Login</p> </div>
+                        <form class="form-area " method="POST" action="" method="POST">
+                            <div class="mb-3 ms-5 ps-2">
+                                <label for="" class="form-label">Username</label>
+                                <input type="text" class="form-control m-0" id="" placeholder="enter username"  style="border: 1px black solid; height: 50px; width: 350px;">
+                            </div>
+                            <div class="mb-3 ms-5 ps-2">
+                                <label for="" class="form-label">Password</label>
+                                <input type="password" class="form-control m-0" id="" placeholder="enter password"  style="border: 1px black solid; height: 50px; width: 350px;">
+                            </div>
+                        </form>
+                    </div>
+                </div> -->
+
+                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                    <div class="log-box" style="border: 2px solid black; background-color: rgb(255, 255, 255); width: 100%; max-width: 450px; border-radius: 10px;">
+                        <div class="d-flex justify-content-center align-items-center mt-3"> 
+                            <h2>Login</h2> 
+                        </div>
+                        <form class="form-area px-5" method="POST" action="">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" name="username" class="form-control" id="username" placeholder="Enter username" style="border: 1px solid black;">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" name="password" class="form-control" id="password" placeholder="Enter password" style="border: 1px solid black;">
+                            </div>
+                            <div class="d-flex justify-content-center mb-3 mt-5">
+                                <button type="submit" class="log-btn btn-dark text-light w-100 btn">Login</button>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <p> Don't have an account? <a href="/register" > Signup</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+{% endblock %}

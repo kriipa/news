@@ -7,7 +7,9 @@ admin.site.register(News)
 admin.site.register(Ad)
 admin.site.register(Category)
 admin.site.register(Vid_cont)
-# admin.site.register(Vid_news)
+admin.site.register(Customer)
+admin.site.register(Contact)
+
 
 # admin.site.register(Catg_News)
 # admin.site.register(Profile)

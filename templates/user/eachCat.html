@@ -8,12 +8,13 @@
     <section>
         <div class="container">
             <div class="row pt-5">
+                {% for news in newws %}
                 <div class="col-4">
                     <div class="card">
-                        <img src="/static/images/sec-part.png" class="card-img-top" alt="...">
+                        <img src="{{news.image.url}}" class="card-img-top" alt="...">
                         <div class="card-body pe-0">
-                            <div class="rounded-category">Politics</div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                            <div class="rounded-category">{{news.category}}</div>
+                            <p class="card-text">{{news.desc}}
                                 <a href="#" class="card-link text-dark">read more</a>
                             </p>
                             
@@ -21,7 +22,10 @@
                         
                     </div>
                 </div>
-                <div class="col-4">
+                {% endfor %}
+
+                
+                <!-- <div class="col-4">
                     <div class="card mb-3">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -33,6 +37,7 @@
                         
                     </div>
                 </div>
+
                 <div class="col-4">
                     <div class="card">
                         <img src="/static/images/sec-part.png" class="card-img-top" alt="...">
@@ -43,7 +48,9 @@
                             </p>                        
                         </div>
                     </div>
-                </div>
+                </div> -->
+                
+
             </div>
 
             <div>

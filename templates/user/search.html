@@ -1,0 +1,36 @@
+
+
+{% extends './root.html' %}
+{% load static %}
+{% block content %}
+
+
+    <section>
+        <div class="container" style="height: 51vh;">
+            <div class="row pt-5">
+                {% for news in search_news %}
+                <div class="col-4">
+                    <div class="card">
+                        <img src="{{news.image.url}}" class="card-img-top" alt="...">
+                        <div class="card-body pe-0">
+                            <div class="rounded-category">{{news.category}}</div>
+                            <p class="card-text">{{news.desc}}
+                                <a href="#" class="card-link text-dark">read more</a>
+                            </p>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div>
+                
+            </div>
+            <!-- button -->
+            
+        </div>
+    </section>
+
+{% endblock%}

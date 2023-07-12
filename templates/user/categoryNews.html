@@ -5,22 +5,18 @@
 <section>
     <div class="container">
         <div class="row">
+            {% for news in newws %}
             <div class="col-8 mb-3">
                 <h1>
                     Cannes Film Festival 2023: Reviews, Red Carpet, a much-diminished 2021 edition & More
                 </h1>
                 <div>
-                    <img class="col-sm-12" src="/static/images/entertainment1.png" alt="">
-                    <p style="font-size: small;">Cannes Film Festival readies a blockbuster edition.<br>
+                    <img class="col-sm-12" src="{{news.image.url}}" alt="">
+                    <p style="font-size: small;">{{news.title}}<br>
                         (Credit: Media Pictures) </p>
                 </div>
-                <p class="new">Leo vel fringilla est ullamcorper. Pharetra massa massa ultricies mi quis hendrerit dolor magna. Sapien nec sagittis aliquam malesuada bibendum arcu. </p>
-                <p class="new">
-                    Felis imperdiet proin fermentum leo vel orci porta. Sagittis aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc.
-                </p>
-                <p class="new">
-                    A cras semper auctor neque vitae tempus quam pellentesque. Odio pellentesque diam volutpat commodo sed. Pellentesque habitant morbi tristique senectus et netus et. Neque laoreet suspendissei. </p>
-                </p>
+                <p class="new">{{news.long_desc|linebreaksbr}} </p>
+                
     
                 <!-- comment section -->
                 <div class="mt-3">

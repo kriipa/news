@@ -9,6 +9,13 @@ class Contactus(models.Model):
     email = models.EmailField(max_length=300)
     ad_email = models.EmailField(max_length=300)
 
+class Contact(models.Model):
+    email = models.EmailField(max_length=300)
+    number = models.CharField(max_length=15)
+    message = models.TextField()
+
+    def __str__(self):
+            return self.email
 
 
 ### video models
@@ -56,7 +63,6 @@ class News(models.Model):
     desc = models.TextField()
     long_desc = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    rank = models.IntegerField(default=0)
     date = models.DateField(null=True, blank=True)
     
     author_name = models.CharField(max_length=300, blank=True)
@@ -78,3 +84,10 @@ class Profile(models.Model):
 
 ### home page
 
+class Customer(models.Model):
+    username=models.CharField(max_length= 500)
+    email = models.EmailField(max_length= 500)
+    password=models.CharField(max_length= 500)
+
+    def __str__(self):
+        return self.username

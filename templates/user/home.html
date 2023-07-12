@@ -15,6 +15,8 @@
 {% load static %}
 {% block content %}
 
+    {% include './breaking.html' %}
+
     {% include './slider.html' %}
     <section>
         <div class="container-fluid">
@@ -34,92 +36,84 @@
                         <p class="mt-2">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
                             <a>read more..</a> 
                         </p> -->
-                        {% for news in newws %}
-                        {% if news.rank == 1 %}
+                        
                         <div class="card">
-                            <img src="{{news.image.url}}" class="card-img-top" alt="...">
+                            <img src="/static/images/sec-part.png" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <div class="rounded-category">{{news.category}}</div>
-                                <p class="card-text">{{news.desc}} <a href="#" class="card-link text-dark">read more</a></p>
+                                <div class="rounded-category">Politics</div>
+                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam architecto praesentium sunt explicabo suscipit hic ipsam saepe vitae deleniti maiores eius totam neque magni minima aliquid doloribus aut, id facere? <a href="#" class="card-link text-dark">read more</a></p>
                                 
                             </div>
                                 
                             <div class="row">
                                 <div class="author  d-flex justify-content-end">
-                                    <img src="{{news.image.url}}" class="img-fluid author-image " alt="Author 1" style=" height:30px; width: 30px; border-radius: 100%;">
-                                    <p class="">{{news.author_name}}</p>
+                                    <img src="/static/images/sec-part.png" class="img-fluid author-image " alt="Author 1" style=" height:30px; width: 30px; border-radius: 100%;">
+                                    <p class="">Lisa Monroe</p>
                                 </div>
                             </div>
                         </div>
-                        {% endif %}
-                        {% endfor %}
+                        
                     </div>
                     <!-- list_part -->
                     <div class="col-6 d-flex flex-column ">
-                        {% for news in newws %}
-                        {% if news.rank == 2 %}
+                        
                         <div class="card mb-3">
                             <div class="row g-0">
                                 <div class="col-md-5 pt-3">
-                                    <img src="{{news.image.url}}" class="img-fluid rounded-start" alt="...">
+                                    <img src="/static/images/right-first.png" class="img-fluid rounded-start" alt="...">
                                 </div>
                                 <div class="col-md-7">
                                     <div class="card-body">
-                                        <div class="rounded-category">{{news.category}}</div>
-                                        <p class="card-text">{{news.desc}}</p>
-                                        <p class="card-text"><small class="text-body-secondary">Last updated {{news.date}}</small></p>
+                                        <div class="rounded-category">Crisis</div>
+                                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde, obcaecati iure molestiae necessitatibus sint eaque.</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 5 hours ago</small></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        {% endif %}
-                        {% endfor %}
+                        
 
-                        {% for news in newws %}
-                        {% if news.rank == 3 %}
+                        
                         <div class="card mb-3">
                             <div class="row g-0">
                                 <div class="col-md-5 pt-3">
-                                    <img src="{{news.image.url}}" class="img-fluid rounded-start" alt="...">
+                                    <img src="/static/images/right-second.png" class="img-fluid rounded-start" alt="...">
                                 </div>
                                 <div class="col-md-7">
                                     <div class="card-body">
-                                        <div class="rounded-category">{{news.category}}</div>
-                                        <p class="card-text">{{news.desc}}</p>
-                                        <p class="card-text"><small class="text-body-secondary">Last updated {{news.date}}</small></p>
+                                        <div class="rounded-category">Climate</div>
+                                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptas sequi labore nemo, voluptate sapiente illo dicta obcaecati saepe voluptatibus</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 20 hours ago</small></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        {% endif %}
-                        {% endfor %}
+                        
 
-                        {% for news in newws %}
-                        {% if news.rank == 4 %}
+                        
                         <div class="card mb-3">
                             <div class="row g-0">
                                 <div class="col-md-5 pt-3">
-                                    <img src="{{news.image.url}}" class="img-fluid rounded-start" alt="...">
+                                    <img src="/static/images/right-third.png" class="img-fluid rounded-start" alt="...">
                                 </div>
                                 <div class="col-md-7">
                                     <div class="card-body">
-                                        <div class="rounded-category">{{news.category}}</div>
-                                        <p class="card-text">{{news.desc}}</p>
-                                        <p class="card-text"><small class="text-body-secondary">Last updated {{news.date}}</small></p>
+                                        <div class="rounded-category">World</div>
+                                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio minima illo consequuntur sapiente aliquam no</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 12 hours ago</small></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        {% endif %}
-                        {% endfor %}
+                        
                     </div>
                     <!-- button -->
                 <div class="row">
                     <div class="col-4"></div>
                     <div class="row col-4">
                         <div class="col-4"></div>
-                        <button class="btn rounded-category col-4" 
-                        style="text-align: center;">load more</button>
+                        <button class="btn rounded-category col-4" id="loadMore"
+                        style="text-align: center;">Show More</button>
                         <div class="col-4"></div>
                     </div>
                     <div class="col-4"></div>
@@ -127,10 +121,10 @@
                     </div>
                 <!-- second-part end-->
 
-                <section class="mt-4"> 
-                    <div class="row">
+                <section class="mt-4 extra-content" id="extraContent"> 
+                    <div class="row ">
                         <div class="col-8">
-                            <div class="card mb-3" style="max-width: 540px;">
+                            <div class="card mb-3" >
                                 <div class="row g-0">
                                     <div class="col-md-4">
                                         <img src="/static/images/load1.png" class="img-fluid rounded-start" style="height: 200px; width: 250px;" alt="...">
@@ -144,13 +138,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card mb-3" style="max-width: 540px;">
+                            <div class="card mb-3" >
                                 <div class="row g-0">
                                     <div class="col-md-4">
                                         <img src="/static/images/load2.png" class="img-fluid rounded-start" style="height: 200px; width: 250px;"  alt="...">
                                     </div>
                                     <div class="col-md-8">
-                                        <div class="card-body">
+                                        <div class="card-body" >
                                             <h5 class="card-title">Card title</h5>
                                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                             <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
