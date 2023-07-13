@@ -78,27 +78,27 @@
                 <!-- nav -->
                 <hr style="border: 1px solid rgb(0, 0, 0);">
                     <div class="nav mb-3 d-flex justify-content-evenly">
-                        <ul class="nav navUL mb-2 mb-lg-0 text-dark" id="nav">
-                            <li class="nav-item">
+                        <ul class="nav navUL mb-2 mb-lg-0 " id="nav">
+                            <li class="nav-item {% if request.path == '/' %}active{% endif %}">
                                 <a class="nav-link act" aria-current="page" href="/">Home</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item {% if request.path == '/Politics/' %}active{% endif %}">
                                 <a class="nav-link act" href="{% url 'category_view' category_name='Politics' %}">Politics</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item {% if request.path == '/World/' %}active{% endif %}">
                                 <a class="nav-link act" href="{% url 'category_view' category_name='World' %}">World</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item {% if request.path == '/Sports/' %}active{% endif %}">
                                 <a class="nav-link act" href="{% url 'category_view' category_name='Sports' %}">Sports</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item {% if request.path == '/Lifestyle/' %}active{% endif %}">
                                 <a class="nav-link act" href="{% url 'category_view' category_name='Lifestyle' %}">Lifestyle</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item {% if request.path == '/Entertainment/' %}active{% endif %}">
                                 <a class="nav-link act" href="{% url 'category_view' category_name='Entertainment' %}">Entertainment</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link act" href="/video/">Video</a>
+                            <li class="nav-item {% if request.path == '/Video/' %}active{% endif %}">
+                                <a class="nav-link act" href="{% url 'category_view' category_name='Entertainment' %}">Video</a>
                             </li>
                         </ul>
                     </div>

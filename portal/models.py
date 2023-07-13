@@ -74,7 +74,7 @@ class News(models.Model):
 
 ### profile page
 class Profile(models.Model):
-    name = models.CharField(max_length= 500)
+    username = models.CharField(max_length= 500)
     email = models.EmailField(max_length= 500)
     Description = models.TextField()
     picture = models.ImageField(upload_to= 'pictures')

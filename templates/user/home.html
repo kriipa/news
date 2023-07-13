@@ -15,9 +15,20 @@
 {% load static %}
 {% block content %}
 
+    <style>
+        @media only screen and (max-width: 768px) {
+            /* For mobile phones: */
+            .col-6 {
+                width: 100% !important;
+            }
+        }
+    </style>
+
     {% include './breaking.html' %}
 
     {% include './slider.html' %}
+
+    
     <section>
         <div class="container-fluid">
             
@@ -108,15 +119,10 @@
                         
                     </div>
                     <!-- button -->
-                <div class="row">
-                    <div class="col-4"></div>
-                    <div class="row col-4">
-                        <div class="col-4"></div>
-                        <button class="btn rounded-category col-4" id="loadMore"
-                        style="text-align: center;">Show More</button>
-                        <div class="col-4"></div>
-                    </div>
-                    <div class="col-4"></div>
+                <div class="row d-flex justify-content-center">
+                    <button class="btn rounded-category col-4" id="loadMore"
+                        style="text-align: center;">Show More
+                    </button>
                 </div>
                     </div>
                 <!-- second-part end-->

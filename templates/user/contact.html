@@ -2,12 +2,17 @@
 {% load static %}
 {% block content %}
     <style>
-        
+        @media only screen and (max-width: 768px) {
+            /* For mobile phones: */
+            .col-6 {
+                width: 100% !important;
+            }
+        }
     </style>
     <section>
         <div class="container">
             <div class="row mt-5 bg-dark" style="border: 1px solid ; height: 700px;">
-                <div class="col-6">
+                <div class="col-6 col-sm-6">
                     <div class="d-flex justify-content-center mb-4 mt-4">
                         <H2 class="" style="color:antiquewhite;">Contact</H2>
                     </div>

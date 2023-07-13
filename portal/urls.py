@@ -15,9 +15,11 @@ urlpatterns = [
     path('eachcat/', eachcat, name='eachcat' ),
     path('profile/', profile, name='profile' ),
     path('edit_profile/', edit_profile, name='edit_profile' ),
-    path('catnews/', catnews, name='catnews' ),
+    # path('catnews/', catnews, name='catnews' ),
+    path('news_single/<int:id>', news_single, name='news_single'),
     path('login/', login_view, name='login'),
     path('register/', register, name='register'),
     path('search/', SearchView.as_view(), name='search'),
+    path('logout/', LogoutPage, name='logout'),
 ]
 

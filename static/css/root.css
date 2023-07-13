@@ -8,34 +8,28 @@
     font-family: 'Noto Serif Georgian', serif;
 }
 
+
+
 .act{
     cursor: pointer;
-    color: black;
 }
+
 .active, .act:hover {
+    background-color: #000000;
+    color: white;
+    border-radius: 8px;
+}
+
+.act #nav > .active > a {
+    background-color: rgb(139, 134, 134);
+    color: #ffffff;
+}
+
+.act.active {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #ffffff;
     background-color: #666;
-    color: white;
+    border-radius: 12px;
 }
 
-.active {
-    background:#1c1e24;
-    color: white;
-    overflow:hidden;
-    border-left:2px solid rgb(223, 223, 223);
-    padding:8px;
-    
-}
-
-.navbar #nav > .active > a {
-    color: red;
-}
-
-/* .css1{
-    background-color:yellow;
-    font-size:50px;
-    font-family: georgia;
-    font-style:italic;
-    font-weight:bold;
-    color:purple;
-    text-shadow: 2px 2px 8px #FF0000;
-} */

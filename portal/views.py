@@ -24,14 +24,6 @@ class Videoview(Base):
         self.views['vids'] = Vid_cont.objects.all()
         return render(request, 'user/videos.html', self.views)
 
-# def vid_cont(request):
-#     vid_list = Vid_cont.objects.all()
-#     paginator = Paginator(vid_list, 4)  # Display 4 videos per page
-#     page_number = request.GET.get('page')
-#     vid_page = paginator.get_page(page_number)
-
-#     return render(request, 'user/videos.html', {'vid_page': vid_page})
-
 
 def category_view(request, category_name):
     category = Category.objects.get(name = category_name)
@@ -47,6 +39,11 @@ def newsdetail(request):
     views={}
     views['news-single']=News.objects.filter(id=id)
     return render(request, 'user/categoryNews.html',views)
+
+def news_single(request, id):
+    views = {}
+    views['news_detail'] = News.objects.filter(id = id)
+    return render(request, 'user/categoryNews.html', views)
 
 class SearchView(Base):
     def get(self,request):
@@ -101,68 +98,6 @@ def catnews(request):
 
 # login
 
-
-# def register(request):
-#     if request.method == 'POST':
-#         uname = request.POST.get('username')
-#         email = request.POST.get('email')
-#         pass1 = request.POST.get('password')
-#         pass2 = request.POST.get('confirm_password')
-    
-
-#         if pass1 != pass2:
-#             messages.error(request, "Your password and confirm password are not the same!")
-#         else:
-#             my_user = User.objects.create_user(uname, email, pass1)
-#             my_user.save()
-
-#             # Create a Customer instance and associate it with the User
-#             customer = Customer.objects.create(username=uname, email=email,  )
-#             customer.save()
-
-#             return redirect('/login')
-
-#     return render(request, '/register')
-
-
-
-# def loginview(request):
-#     if request.method=='POST':
-#         username=request.POST.get('username')
-#         pass1=request.POST.get('password')
-#         user=authenticate(request,username=username,password=pass1)
-#         if user is not None:
-#             login(request,user)
-#             return redirect('home')
-#         else:
-#             messages.error ("Username or Password is incorrect!!!")
-
-#     return render (request,'login.html')
-
-
-
-# def login_view(request):
-#     if request.method == 'POST':
-#         form = AuthenticationForm(data=request.POST)
-#         if form.is_valid():
-#             user = form.get_user()
-#             login(request, user)
-#             return redirect('home')
-#     else:
-#         form = AuthenticationForm()
-#     return render(request, 'home.html', {'login_form': form})
-
-# def register_view(request):
-#     if request.method == 'POST':
-#         form = UserCreationForm(request.POST)
-#         if form.is_valid():
-#             user = form.save()
-#             login(request, user)
-#             return redirect('home')
-#     else:
-#         form = UserCreationForm()
-#     return render(request, 'home.html', {'register_form': form})
-
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
@@ -203,3 +138,20 @@ def login_view(request):
 def LogoutPage(request):
     logout(request)
     return redirect('home')
+
+from django.shortcuts import render
+from .models import Profile, Customer
+@login_required
+def profile_view(request):
+    # Retrieve the customer profile
+    customer = Customer.objects.get(username=request.user.username)
+
+    # Retrieve the corresponding profile
+    profile = Profile.objects.get(username=request.user.username)
+
+    context = {
+        'customer': customer,
+        'profile': profile
+    }
+
+    return render(request, 'user/profilepage.html', context)

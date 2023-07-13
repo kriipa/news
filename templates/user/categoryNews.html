@@ -5,15 +5,12 @@
 <section>
     <div class="container">
         <div class="row">
-            {% for news in newws %}
+            {% for news in news_details %}
             <div class="col-8 mb-3">
-                <h1>
-                    Cannes Film Festival 2023: Reviews, Red Carpet, a much-diminished 2021 edition & More
-                </h1>
+                <h1>{{news.heading}}</h1>
                 <div>
                     <img class="col-sm-12" src="{{news.image.url}}" alt="">
-                    <p style="font-size: small;">{{news.title}}<br>
-                        (Credit: Media Pictures) </p>
+                    <p style="font-size: small;">{{news.title}}</p>
                 </div>
                 <p class="new">{{news.long_desc|linebreaksbr}} </p>
                 
