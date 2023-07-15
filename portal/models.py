@@ -2,6 +2,7 @@ from datetime import datetime
 from django.db import models
 
 # Create your models here.
+from django.contrib.auth.models import User
 
 ## for contact
 class Contactus(models.Model):
@@ -23,7 +24,8 @@ class Vid_cont(models.Model):
     name= models.TextField()
     heading = models.TextField(blank=True)
     image = models.ImageField(upload_to= 'media')
-    desc = models.TextField()
+    video_url = models.URLField(blank= True)
+    desc = models.TextField(blank=True)
     caption = models.CharField(max_length=600, blank=True)
     full_desc = models.TextField(blank=True)
     rank = models.IntegerField(default=0)
@@ -74,6 +76,7 @@ class News(models.Model):
 
 ### profile page
 class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     username = models.CharField(max_length= 500)
     email = models.EmailField(max_length= 500)
     Description = models.TextField()
@@ -91,3 +94,11 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.username
+    
+class Comment(models.Model):
+    text = models.TextField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    news = models.ForeignKey(News, on_delete=models.CASCADE, null=True) 
+    def __str__(self):
+        return self.text

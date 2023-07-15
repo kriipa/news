@@ -10,8 +10,7 @@ admin.site.register(Vid_cont)
 admin.site.register(Customer)
 admin.site.register(Contact)
 
-
 # admin.site.register(Catg_News)
-# admin.site.register(Profile)
+admin.site.register(Comment)
 
 

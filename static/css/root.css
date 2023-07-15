@@ -22,7 +22,7 @@
 
 .act #nav > .active > a {
     background-color: rgb(139, 134, 134);
-    color: #ffffff;
+color: #ffffff;
 }
 
 .act.active {

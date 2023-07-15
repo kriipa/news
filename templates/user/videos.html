@@ -17,7 +17,9 @@
 
 <body> -->
 
-{% extends './root.html' %} {% load static %} {% block content %}
+{% extends './root.html' %} 
+{% load static %} 
+{% block content %}
 
 <section>
 <div class="container">
@@ -30,49 +32,58 @@
         <div class="row row-cols-1 row-cols-md-4 card-group">
             {% for vid in vids %}
             {% if vid.rank == 1 %}
-            <div class="card me-1 ">
-                <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <p class="card-text">{{vid.desc}}
-                    </p>
+            <a href="/video_single/{{vid.id}}">
+                <div class="card me-1 ">
+                    <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <p class="card-text">{{vid.desc}}
+                        </p>
+                    </div>
                 </div>
-            </div>
+            </a>
+            
             {% endif %}
             {% endfor %}
 
             {% for vid in vids %}
             {% if vid.rank == 2 %}
-            <div class="card me-1 ">
-                <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <p class="card-text">{{vid.desc}}
-                    </p>
+            <a href="/video_single/{{vid.id}}">
+                <div class="card me-1 ">
+                    <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <p class="card-text">{{vid.desc}}
+                        </p>
+                    </div>
                 </div>
-            </div>
+            </a>
             {% endif %}
             {% endfor %}
             
             {% for vid in vids %}
             {% if vid.rank == 3 %}
-            <div class="card me-1 ">
-                <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <p class="card-text">{{vid.desc}}
-                    </p>
+            <a href="/video_single/{{vid.id}}">
+                <div class="card me-1 ">
+                    <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <p class="card-text">{{vid.desc}}
+                        </p>
+                    </div>
                 </div>
-            </div>
+            </a>
             {% endif %}
             {% endfor %}
 
             {% for vid in vids %}
             {% if vid.rank == 4 %}
-            <div class="card ">
-                <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <p class="card-text">{{vid.desc}}
-                    </p>
+            <a href="/video_single/{{vid.id}}">
+                <div class="card ">
+                    <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <p class="card-text">{{vid.desc}}
+                        </p>
+                    </div>
                 </div>
-            </div>
+            </a>
             {% endif %}
             {% endfor %}
         </div>
@@ -82,62 +93,59 @@
         <div class="row row-cols-1 row-cols-md-4 card-group">
             {% for vid in vids %}
             {% if vid.rank == 5 %}
-            <div class="card me-1 ">
-                <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <p class="card-text">{{vid.desc}}
-                    </p>
+            <a href="/video_single/{{vid.id}}">
+                <div class="card me-1 ">
+                    <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <p class="card-text">{{vid.desc}}
+                        </p>
+                    </div>
                 </div>
-            </div>
+            </a>
             {% endif %}
             {% endfor %}
 
             {% for vid in vids %}
             {% if vid.rank == 6 %}
-            <div class="card me-1 ">
-                <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <p class="card-text">{{vid.desc}}
-                    </p>
+            <a href="/video_single/{{vid.id}}">
+                <div class="card me-1 ">
+                    <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <p class="card-text">{{vid.desc}}
+                        </p>
+                    </div>
                 </div>
-            </div>
+            </a>
             {% endif %}
             {% endfor %}
 
             {% for vid in vids %}
             {% if vid.rank == 7 %}
-            <div class="card me-1 ">
-                <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <p class="card-text">{{vid.desc}}
-                    </p>
+            <a href="/video_single/{{vid.id}}">
+                <div class="card me-1 ">
+                    <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <p class="card-text">{{vid.desc}}
+                        </p>
+                    </div>
                 </div>
-            </div>
+            </a>
             {% endif %}
             {% endfor %}
 
-            <!-- <div class="card me-1">
-                <img src="..." class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This card has even longer content
-                    than the first to show that equal height action.
-                    </p>
-                </div>
-                
-            </div> -->
+            
 
             {% for vid in vids %}
             {% if vid.rank == 8 %}
-            <div class="card">
-                <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <p class="card-text">{{vid.desc}}
-                    </p>
+            <a href="/video_single/{{vid.id}}">
+                <div class="card">
+                    <img src="{{vid.image.url}}" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <p class="card-text">{{vid.desc}}
+                        </p>
+                    </div>
                 </div>
-            </div>
+            </a>
             {% endif %}
             {% endfor %}
         </div>
