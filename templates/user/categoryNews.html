@@ -3,6 +3,9 @@
 {% block content %}
 
 <style>
+    #foot{
+        display: none;
+    }
     @media only screen and (max-width: 768px) {
         /* For mobile phones: */
         .col-6 {
@@ -27,54 +30,79 @@
                 </div>
                 <p class="new">{{ news_detail.long_desc|linebreaksbr }}</p>
                 
-                <!-- comment section -->
-                <div class="mt-3">
-                    <div class="comment mb-5 mt-3">
-                        <h3>Comments</h3>
-
-                        <!-- Comment form -->
-                        {% if user.is_authenticated %}
-                        <form class="mt-3" method="POST" action="{% url 'post_comment' news_detail.id %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="news_id" value="{{ news_detail.id }}">
-                            <textarea class="col-sm-12" name="comment" cols="67" rows="5" placeholder="Write your comment.." style="border-radius: 8px;"></textarea>
-                            <div class="d-flex align-items-end">
-                                <div class="col-6"></div>
-                                <div class="col-6">
-                                    <button type="submit" class="mt-2" style="border: 1px solid black; background-color: rgb(212, 212, 209); height: 40px; border-radius: 7px; margin-left: 80%; overflow: hidden;">
-                                        Submit
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                        {% else %}
-                            <p class="mt-3">Please <a href="{% url 'login' %}">log in</a> to post a comment.</p>
-                        {% endif %}
-
-                        {% for comment in comments %}
-                        <div class="row mt-3">
-                            <div class="col">
-                                <div class="row">
-                                    <p class="col"><b>{{ comment.user.username }}</b></p>
-                                    <p class="col small">{{ comment.created_at }}</p>
-                                </div>
-                                <p>Comment: {{ comment.text }}</p>
-                            </div>
-                        </div>
-                        <hr>
-                        {% empty %}
-                            <p class="mt-4">No comments yet.</p>
-                        {% endfor %}
-                    </div>
-                    <!-- Rest of the form and other content -->
-                </div>
+                
             </div>
             <div class="col-12 col-md-4 justify-content-end">
                 <img class="d-none d-md-block" src="/static/images/ad1.png" alt="">
                 <img class="pt-2" src="/static/images/ad2.png" alt="">
             </div>
+
         </div>
     </div>
+    
+
 </section>
+
+<!-- comment section -->
+<div class="mt-3">
+    <div class="comment mb-5 mt-3">
+        <h3>Comments</h3>
+
+        <!-- Comment form -->
+        {% if user.is_authenticated %}
+        <form class="mt-3" method="POST" action="{% url 'post_comment' news_detail.id %}">
+            {% csrf_token %}
+            <input type="hidden" name="news_id" value="{{ news_detail.id }}">
+            <textarea class="col-sm-12" name="comment" cols="67" rows="5" placeholder="Write your comment.." style="border-radius: 8px;"></textarea>
+            <div class="d-flex align-items-end">
+                <div class="col-6"></div>
+                <div class="col-6">
+                    <button type="submit" class="mt-2" style="border: 1px solid black; background-color: rgb(212, 212, 209); height: 40px; border-radius: 7px; margin-left: 80%; overflow: hidden;">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </form>
+        {% else %}
+            <p class="mt-3">Please <a href="{% url 'login' %}">log in</a> to post a comment.</p>
+        {% endif %}
+
+        {% for comment in comments %}
+        <div class="row mt-3">
+            <div class="col">
+                <div class="row">
+                    <p class="col"><b>{{ comment.user.username }}</b></p>
+                    <p class="col small">{{ comment.created_at }}</p>
+                </div>
+                <p>Comment: {{ comment.text }}</p>
+            </div>
+        </div>
+        <hr>
+        {% empty %}
+            <p class="mt-4">No comments yet.</p>
+        {% endfor %}
+
+        <div class="" style=" position: relative;
+                    left: 50%;
+                    transform: translate(-50%, 0); bottom: 0;">
+                    <div class="col align-item-center mt-5" style=" border: 1px solid black; width: 80%; margin: 0 auto;"> </div>
+                            <div class="footer">
+                                <div class="card text-center" style="border: none;" >
+                                    <div class="card-body d-flex justify-content-evenly">
+                                        <a href="/help" class="btn ">Help</a>
+                                        <a href="/aboutus" class="btn ">About us</a>
+                                        <a href="/privacy" class="btn ">Privacy Policy</a>
+                                        <a href="/contact" class="btn ">Contact us</a>
+                                    </div>
+                                    
+                                    <p style="font-size: 15px;">
+                                        <i class="fa-regular fa-copyright"></i>
+                                            2023 InfoDaily News</p>
+                                </div>
+                            </div>
+            </div>
+    </div>
+    <!-- Rest of the form and other content -->
+</div>
 
 {% endblock %}
