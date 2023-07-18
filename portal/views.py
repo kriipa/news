@@ -113,6 +113,9 @@ def eachcat(request):
 def catnews(request):
     return render(request, 'user/categoryNews.html')
 
+def rank1(request):
+    return render(request, 'user/rank1.html')
+
 # login
 
 from django.contrib.auth import authenticate, login

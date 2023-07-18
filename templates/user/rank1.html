@@ -1,0 +1,121 @@
+{% extends './root.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    #foot{
+        display: none;
+    }
+    @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        .col-6 {
+            width: 100% !important;
+        }
+    }
+
+    .comment-section {
+        max-height: 300px;
+        overflow-y: auto;
+        padding-right: 20px; /* Add some space to prevent horizontal scrollbar */
+    }
+</style>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8 mb-3">
+                <h4>Oli does not want to quit on moral grounds but instead is talking of horse trading</h4>
+                <div>
+                    <img class="col-sm-12" src="/static/images/thumb.php.jpeg" alt="">
+                    <p style="font-size: small;">Implying elected representatives are for sale is disrespecting the House and electorate, lawmakers and analysts say.</p>
+                </div>
+                <p class="new">In principle, Oli should have resigned on moral grounds after the Supreme Court’s decision, but he has been challenging his opponents—Pushpa Kamal Dahal and Madhav Kumar Nepal—to oust </p>
+
+                <p>
+                    If Oli does not resign of his own volition, the House is likely to be deadlocked. The only way the Dahal-Nepal faction can unseat Oli is through a no-confidence motion, but since it lacks the numbers, it will need the Nepali Congress support to do so.<br>
+                </p>
+                    
+                <p>
+                    The Dahal-Nepal faction claims to have around 90 Members of Parliament on its side. That leaves the Oli faction with 80 to 83 members supporting it. The Nepali Congress has 63 seats in the House and the Janata Samajbadi Party 34.<br>
+                </p>
+                    
+                <p>
+                    No party has a majority. And now politicians themselves are expressing concerts if lawmakers could switch sides for their personal gains.
+                </p>
+                    
+                
+                
+            </div>
+            <div class="col-12 col-md-4 justify-content-end">
+                <img class="d-none d-md-block" src="/static/images/ad1.png" alt="">
+                <img class="pt-2" src="/static/images/ad2.png" alt="">
+            </div>
+
+        </div>
+    </div>
+    
+
+</section>
+
+<!-- comment section -->
+<div class="mt-3">
+    <div class="comment mb-5 mt-3">
+        <h3>Comments</h3>
+
+        <!-- Comment form -->
+        
+        <form class="mt-3" method="POST" action="=">
+            
+            <input type="hidden" name="news_id" value="">
+            <textarea class="col-sm-12" name="comment" cols="67" rows="5" placeholder="Write your comment.." style="border-radius: 8px;"></textarea>
+            <div class="d-flex align-items-end">
+                <div class="col-6"></div>
+                <div class="col-6">
+                    <button type="submit" class="mt-2" style="border: 1px solid black; background-color: rgb(212, 212, 209); height: 40px; border-radius: 7px; margin-left: 80%; overflow: hidden;">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </form>
+        
+            <p class="mt-3">Please <a href="/">log in</a> to post a comment.</p>
+        
+
+        
+        <div class="row mt-3">
+            <div class="col">
+                <div class="row">
+                    <p class="col"><b>utsha</b></p>
+                    <p class="col small">10 hours ago</p>
+                </div>
+                <p>Comment: good content</p>
+            </div>
+        </div>
+        <hr>
+        
+            <!-- <p class="mt-4">No comments yet.</p> -->
+        
+
+        <div class="" style=" position: relative;
+                    left: 50%;
+                    transform: translate(-50%, 0); bottom: 0;">
+                    <div class="col align-item-center mt-5" style=" border: 1px solid black; width: 80%; margin: 0 auto;"> </div>
+                            <div class="footer">
+                                <div class="card text-center" style="border: none;" >
+                                    <div class="card-body d-flex justify-content-evenly">
+                                        <a href="/help" class="btn ">Help</a>
+                                        <a href="/aboutus" class="btn ">About us</a>
+                                        <a href="/privacy" class="btn ">Privacy Policy</a>
+                                        <a href="/contact" class="btn ">Contact us</a>
+                                    </div>
+                                    
+                                    <p style="font-size: 15px;">
+                                        <i class="fa-regular fa-copyright"></i>
+                                            2023 InfoDaily News</p>
+                                </div>
+                            </div>
+            </div>
+    </div>
+    <!-- Rest of the form and other content -->
+</div>
+
+{% endblock %}

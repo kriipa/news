@@ -22,5 +22,6 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('search/', SearchView.as_view(), name='search'),
     path('logout/', LogoutPage, name='logout'),
+    path('rank1/', rank1, name='rank1'),
 ]
 
